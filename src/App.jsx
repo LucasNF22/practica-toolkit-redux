@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { increment } from './store/slices/counter';
+import { decrement, increment, incrementBy } from './store/slices/counter';
 
 function App() {
   
@@ -20,10 +20,16 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1> count is { counter }</h1>
       <div className="card">
         <button onClick={ () => dispatch( increment() ) }>
-          count is { counter }
+          Increment
+        </button>
+        <button onClick={ () => dispatch( decrement() ) }>
+          Decrement
+        </button>
+        <button onClick={ () => dispatch( incrementBy(10) ) }>
+          Increment By 2
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR

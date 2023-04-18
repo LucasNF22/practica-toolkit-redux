@@ -5,6 +5,10 @@ export const getPokemons = ( page = 0 ) => {
         dispatch( startLoadingPokemons() );
 
         // TODO realizar peticion HTTP de pokemons
+        const resp = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=0${ page * 10 }`);
+        const data = await resp.json();
+        console.log(  );
+
 
         // dispatch( setPokemons() );
     }
